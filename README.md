@@ -971,3 +971,162 @@ The platform follows these cost optimization principles:
 - **Efficiency** – Maximize utilization while maintaining application performance and reliability.
 
 ---
+## Platform Automation
+
+The platform includes Python-based automation services that streamline routine operational tasks, reduce manual intervention, and improve platform reliability. These automation workflows support day-to-day platform operations by validating cluster health, generating operational reports, and executing scheduled maintenance activities.
+
+Automation services are designed to integrate with the Kubernetes platform and cloud infrastructure, enabling consistent and repeatable operational processes.
+
+### Automation Capabilities
+
+| Automation Service | Purpose |
+|--------------------|---------|
+| **Cluster Health Validation** | Verifies the health of Kubernetes clusters, nodes, and workloads. |
+| **Platform Health Reporting** | Generates consolidated reports on platform status and resource utilization. |
+| **Infrastructure Validation** | Performs automated checks on cloud infrastructure components and platform services. |
+| **Scheduled Maintenance** | Executes recurring operational tasks such as cleanup, validation, and reporting. |
+| **Operational Reporting** | Produces platform metrics and health summaries for operational visibility. |
+
+### Automation Workflow
+
+```text
+Scheduled Trigger
+        │
+        ▼
+Python Automation Service
+        │
+        ├── Validate Cluster Health
+        ├── Check Platform Services
+        ├── Verify Infrastructure Status
+        ├── Collect Metrics
+        ├── Generate Reports
+        └── Publish Results
+```
+
+### Key Capabilities
+
+- Automated platform health validation
+- Kubernetes cluster status verification
+- Infrastructure health checks
+- Scheduled operational tasks
+- Automated reporting
+- Consistent operational workflows
+- Reduced manual intervention
+- Improved operational efficiency
+
+### Design Principles
+
+The platform automation services are designed around the following principles:
+
+- **Automation First** – Routine operational activities are automated wherever practical.
+- **Reliability** – Continuous validation helps detect issues before they impact workloads.
+- **Consistency** – Standardized automation ensures repeatable operational processes.
+- **Scalability** – Automation services can be extended to support additional operational use cases as the platform evolves.
+
+---
+
+## Repository Overview
+
+The platform is organized into multiple repositories, following a modular architecture that separates infrastructure, platform services, application source code, and GitOps configuration. This approach improves maintainability, enables independent versioning, and aligns with production Platform Engineering practices.
+
+| Repository | Purpose |
+|------------|---------|
+| **platform-infra** | Provisions Google Cloud infrastructure and Kubernetes platform services using Terraform. |
+| **gitops-microservices-platform** | Stores Kubernetes manifests, Kustomize overlays, and ArgoCD Applications that define the desired cluster state. |
+| **voting-app** | Contains the application source code, Dockerfiles, unit tests, and GitHub Actions CI pipelines for the Vote, Result, and Worker services. |
+| **platform-automation** | Contains Python-based automation services for platform health validation, operational reporting, and scheduled maintenance tasks. |
+
+### Repository Responsibilities
+
+#### platform-infra
+
+Responsible for provisioning and managing the platform infrastructure, including:
+
+- Google Cloud infrastructure
+- Networking
+- Google Kubernetes Engine (GKE)
+- Cloud SQL
+- Artifact Registry
+- IAM and Workload Identity Federation
+- Kubernetes platform services
+- Terraform modules
+
+---
+
+#### gitops-microservices-platform
+
+Acts as the GitOps repository and contains:
+
+- Kubernetes manifests
+- Kustomize base and overlays
+- ArgoCD Applications
+- Argo Rollouts
+- Gateway API resources
+- Environment-specific configurations
+
+---
+
+#### voting-app
+
+Contains the application implementation, including:
+
+- Vote Service
+- Result Service
+- Worker Service
+- Dockerfiles
+- GitHub Actions CI pipelines
+
+---
+
+#### platform-automation
+
+Provides operational automation, including:
+
+- Cluster health validation
+- Platform health reporting
+- Infrastructure validation
+- Scheduled maintenance
+- Operational reporting
+
+### Repository Relationships
+
+```text
+                Developer
+                     │
+                     ▼
+          voting-app Repository
+                     │
+         GitHub Actions CI Pipeline
+                     │
+                     ▼
+         Google Artifact Registry
+                     │
+                     ▼
+  gitops-microservices-platform
+                     │
+              ArgoCD GitOps
+                     │
+                     ▼
+          Google Kubernetes Engine
+                     ▲
+                     │
+         platform-infra Repository
+     (Terraform Infrastructure & Platform)
+                     │
+                     ▼
+        platform-automation Repository
+     (Health Checks & Operational Tasks)
+```
+
+### Benefits of the Multi-Repository Approach
+
+- Clear separation of responsibilities
+- Independent development and versioning
+- Improved maintainability
+- GitOps-driven deployments
+- Reusable infrastructure modules
+- Simplified collaboration
+- Better security and access control
+- Production-ready repository organization
+
+---
