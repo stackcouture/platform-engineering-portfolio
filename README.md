@@ -9,6 +9,13 @@ Application delivery follows a GitOps workflow using ArgoCD and Kustomize, enabl
 Security is integrated throughout the platform using policy enforcement, runtime security, secrets management, network segmentation, and container image verification. Observability is provided through centralized monitoring, metrics collection, alerting, and cost visibility.
 
 The portfolio demonstrates a complete Platform Engineering lifecycle, covering infrastructure provisioning, platform management, application deployment, security, observability, automation, and progressive delivery using production-oriented engineering practices.
+
+---
+## Solution Architecture
+
+The following architecture illustrates the complete platform deployment on GCP.
+![Architecture Diagram](docs/images/platform_engineering_architecture.png "Platform Architecture")
+
 ---
 
 
