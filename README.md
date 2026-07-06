@@ -44,6 +44,14 @@ Architecture at a glance
 | Application | https://github.com/stackcouture/voting-app |
 | Platform Automation | https://github.com/stackcouture/platform-automation |
 
+---
+
+The following demo the complete platform deployment on GCP.
+
+![Demo](docs/demo.gif "Platform Demo")
+
+---
+
 ## Platform Layers
 
 ### 1. Infrastructure Layer
