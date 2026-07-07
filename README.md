@@ -1396,3 +1396,117 @@ The platform is designed with a modular architecture, allowing new capabilities 
 - Budget monitoring and cost alerts
 - Enhanced capacity planning and forecasting
 ---
+
+## Learning Outcomes
+
+Over the past months, I designed, deployed, troubleshot, and operated a production-style Platform Engineering environment on **Google Cloud Platform (GCP)**. This project provided hands-on experience across the complete software delivery lifecycle—from infrastructure provisioning to Kubernetes operations, GitOps, security, observability, and automation.
+
+---
+
+## Skills Gained
+
+| Area                             | Learning Outcomes                                                                                                                                                                 |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Infrastructure & Cloud**       | Designed modular Terraform infrastructure, managed remote state, configured VPC networking, Cloud NAT, IAM, Workload Identity Federation, and resolved cloud provisioning issues. |
+| **Platform Engineering**         | Built a production-ready Kubernetes platform integrating GitOps, observability, security, autoscaling, backup, and shared platform services.                                      |
+| **GitOps & Continuous Delivery** | Implemented GitOps with ArgoCD and Kustomize, configured Argo Rollouts, and learned declarative deployment and reconciliation workflows.                                          |
+| **CI/CD & DevSecOps**            | Developed GitHub Actions pipelines for automated testing, container builds, vulnerability scanning, SBOM generation, image signing, and GitOps updates.                           |
+| **Security**                     | Implemented Policy as Code, RBAC, Workload Identity Federation, External Secrets, runtime security, and secure software supply chain practices.                                   |
+| **Observability**                | Built centralized monitoring using Prometheus, Grafana, Alertmanager, ServiceMonitors, and database exporters for operational visibility.                                         |
+| **Reliability**                  | Implemented backup and recovery, autoscaling, cost optimization, and operational best practices for production environments.                                                      |
+
+---
+
+## Troubleshooting Experience
+
+Throughout the project, I investigated and resolved real-world engineering challenges, including:
+
+* Terraform provisioning failures
+* Google Cloud quota limitations
+* IAM permission and authentication issues
+* Kubernetes scheduling and resource allocation problems
+* Node pools, taints, tolerations, and affinity configuration
+* Helm deployment failures
+* DNS, Gateway API, and ingress configuration
+* TLS certificate issuance and renewal
+* External Secrets synchronization
+* Persistent storage provisioning
+* Container registry authentication
+* GitOps synchronization and reconciliation
+* Progressive deployment configuration
+* Monitoring and alerting configuration
+* Kubernetes networking and traffic routing
+
+---
+
+## Technical Expertise Developed
+
+### Infrastructure as Code
+
+* Modular Terraform architecture
+* Remote state management
+* Environment-specific deployments
+* Infrastructure automation
+
+### Kubernetes Platform Engineering
+
+* Google Kubernetes Engine (GKE)
+* Platform bootstrapping
+* Shared platform services
+* Production-grade cluster operations
+
+### GitOps
+
+* ArgoCD
+* Kustomize
+* Argo Rollouts
+* Declarative deployments
+
+### CI/CD
+
+* GitHub Actions
+* Docker
+* Artifact Registry
+* Automated deployment pipelines
+
+### DevSecOps
+
+* Trivy
+* Cosign
+* SBOM
+* Kyverno
+* Falco
+* External Secrets
+* Workload Identity Federation
+
+### Observability
+
+* Prometheus
+* Grafana
+* Alertmanager
+* PostgreSQL Exporter
+* Redis Exporter
+
+### Reliability
+
+* Velero
+* KEDA
+* Horizontal Pod Autoscaler (HPA)
+* Cluster Autoscaler
+* Kubecost
+
+---
+
+## Key Takeaways
+
+Through this project, I strengthened my ability to:
+
+* Build production-grade cloud infrastructure using Infrastructure as Code.
+* Design and operate Kubernetes platforms following Platform Engineering principles.
+* Implement GitOps-based application delivery using ArgoCD.
+* Build secure CI/CD pipelines with integrated DevSecOps practices.
+* Apply observability, automation, and reliability best practices.
+* Troubleshoot complex cloud-native infrastructure systematically.
+* Integrate infrastructure, Kubernetes, GitOps, CI/CD, security, and observability into a cohesive Platform Engineering platform.
+
+---
