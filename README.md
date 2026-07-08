@@ -48,10 +48,9 @@ Architecture at a glance
 
 The following demo the complete platform deployment on GCP.
 
-![Demo](docs/demo-latest.gif "Platform Demo")
+![Demo](docs/images/platform_arch.png "Platform Demo")
 
 ---
-
 ## Platform Layers
 
 ### 1. Infrastructure Layer
@@ -142,13 +141,12 @@ The pipeline performs:
 
 1. Source code checkout
 2. Dependency installation
-3. Unit testing
-4. Docker image build
-5. Trivy vulnerability scanning
-6. SBOM generation
-7. Cosign image signing
-8. Push image to Artifact Registry
-9. Update GitOps manifests automatically
+3. Docker image build
+4. Trivy vulnerability scanning
+5. SBOM generation
+6. Cosign image signing
+7. Push image to Artifact Registry
+8. Update GitOps manifests automatically
 
 Once the GitOps repository is updated, **ArgoCD** automatically synchronizes the cluster with the latest application version.
 
@@ -204,10 +202,6 @@ Operational tasks are automated using Python-based services.
 Automation includes:
 
 - Daily platform health reports
-- Cluster health validation
-- Infrastructure reporting
-- Scheduled maintenance tasks
-- Operational self-healing workflows
 
 These automation services reduce manual effort, improve platform reliability, and streamline day-to-day operations.
 
@@ -426,10 +420,112 @@ Platform Engineering Portfolio
 | **platform-automation** | Platform automation repository containing Python-based automation tools, scheduled jobs, operational reports, health checks, and day-to-day platform maintenance scripts. |
 
 ---
-## Platform Architecture
+## Repository Overview
 
-The platform is delivered as a set of independent, composable layers running on Google Kubernetes Engine (GKE). Infrastructure is provisioned once via Terraform, and everything above it — platform services, security, observability, and applications — is managed declaratively through GitOps, so the cluster's actual state always matches what's committed to Git.
+The platform is organized into multiple repositories, following a modular architecture that separates infrastructure, platform services, application source code, and GitOps configuration. This approach improves maintainability, enables independent versioning, and aligns with production Platform Engineering practices.
 
+| Repository | Purpose |
+|------------|---------|
+| **platform-infra** | Provisions Google Cloud infrastructure and Kubernetes platform services using Terraform. |
+| **gitops-microservices-platform** | Stores Kubernetes manifests, Kustomize overlays, and ArgoCD Applications that define the desired cluster state. |
+| **voting-app** | Contains the application source code, Dockerfiles, unit tests, and GitHub Actions CI pipelines for the Vote, Result, and Worker services. |
+| **platform-automation** | Contains Python-based automation services for platform health validation, operational reporting, and scheduled maintenance tasks. |
+
+---
+### Repository Responsibilities
+
+#### platform-infra
+
+Responsible for provisioning and managing the platform infrastructure, including:
+
+- Google Cloud infrastructure
+- Networking
+- Google Kubernetes Engine (GKE)
+- Cloud SQL
+- Artifact Registry
+- IAM and Workload Identity Federation
+- Kubernetes platform services
+- Terraform modules
+
+---
+
+#### gitops-microservices-platform
+
+Acts as the GitOps repository and contains:
+
+- Kubernetes manifests
+- Kustomize base and overlays
+- ArgoCD Applications
+- Argo Rollouts
+- Gateway API resources
+- Environment-specific configurations
+
+---
+
+#### voting-app
+
+Contains the application implementation, including:
+
+- Vote Service
+- Result Service
+- Worker Service
+- Dockerfiles
+- GitHub Actions CI pipelines
+
+---
+
+#### platform-automation
+
+Provides operational automation, including:
+
+- Cluster health validation
+- Platform health reporting
+- Infrastructure validation
+- Scheduled maintenance
+- Operational reporting
+
+### Repository Relationships
+
+```text
+                Developer
+                     │
+                     ▼
+          voting-app Repository
+                     │
+         GitHub Actions CI Pipeline
+                     │
+                     ▼
+         Google Artifact Registry
+                     │
+                     ▼
+  gitops-microservices-platform
+                     │
+              ArgoCD GitOps
+                     │
+                     ▼
+          Google Kubernetes Engine
+                     ▲
+                     │
+         platform-infra Repository
+     (Terraform Infrastructure & Platform)
+                     │
+                     ▼
+        platform-automation Repository
+     (Health Checks & Operational Tasks)
+```
+
+### Benefits of the Multi-Repository Approach
+
+- Clear separation of responsibilities
+- Independent development and versioning
+- Improved maintainability
+- GitOps-driven deployments
+- Reusable infrastructure modules
+- Simplified collaboration
+- Better security and access control
+- Production-ready repository organization
+
+---
 ## Layer Responsibilities
 
 | Layer | Purpose | Core Components |
@@ -439,7 +535,6 @@ The platform is delivered as a set of independent, composable layers running on 
 | **Application** | Hosts the cloud-native business workloads running on the platform. | Vote Service, Result Service, Worker Service, PostgreSQL, Redis |
 
 ---
-
 ## How It Fits Together
 
 The platform follows a layered architecture where each layer has a clearly defined responsibility and lifecycle.
@@ -907,9 +1002,8 @@ Validate Platform Health
         ▼
 Resume Application Services
 ```
-
+---
 ### Recovery Capabilities
-
 - Scheduled platform backups
 - On-demand backup creation
 - Kubernetes resource restoration
@@ -919,6 +1013,7 @@ Resume Application Services
 - Disaster recovery testing
 - Version-controlled infrastructure reconstruction using Terraform
 
+---
 ### Design Principles
 
 The disaster recovery strategy is based on:
@@ -933,6 +1028,7 @@ The disaster recovery strategy is based on:
 
 The platform incorporates cost optimization practices to improve resource efficiency while maintaining application performance and availability. By combining Kubernetes autoscaling, resource governance, and cost visibility, the platform helps reduce unnecessary cloud resource consumption.
 
+---
 ### Cost Optimization Components
 
 | Component | Purpose |
@@ -943,6 +1039,7 @@ The platform incorporates cost optimization practices to improve resource effici
 | **Cluster Autoscaler** | Dynamically scales Kubernetes node pools to match workload demand. |
 | **Resource Requests & Limits** | Ensures efficient CPU and memory allocation while preventing resource contention. |
 
+---
 ### Cost Optimization Strategies
 
 The platform implements the following optimization techniques:
@@ -956,6 +1053,7 @@ The platform implements the following optimization techniques:
 - Capacity planning using Prometheus and Grafana metrics
 - Efficient scheduling of workloads based on resource requirements
 
+---
 ### Cost Visibility
 
 Kubecost provides insights into:
@@ -968,6 +1066,7 @@ Kubecost provides insights into:
 - Resource allocation trends
 - Cost optimization opportunities
 
+---
 ### Key Benefits
 
 - Improved resource utilization
@@ -978,6 +1077,7 @@ Kubecost provides insights into:
 - Enhanced visibility into Kubernetes resource usage
 - Data-driven cost optimization decisions
 
+---
 ### Design Principles
 
 The platform follows these cost optimization principles:
@@ -994,16 +1094,14 @@ The platform includes Python-based automation services that streamline routine o
 
 Automation services are designed to integrate with the Kubernetes platform and cloud infrastructure, enabling consistent and repeatable operational processes.
 
+---
 ### Automation Capabilities
 
 | Automation Service | Purpose |
 |--------------------|---------|
 | **Cluster Health Validation** | Verifies the health of Kubernetes clusters, nodes, and workloads. |
-| **Platform Health Reporting** | Generates consolidated reports on platform status and resource utilization. |
-| **Infrastructure Validation** | Performs automated checks on cloud infrastructure components and platform services. |
-| **Scheduled Maintenance** | Executes recurring operational tasks such as cleanup, validation, and reporting. |
-| **Operational Reporting** | Produces platform metrics and health summaries for operational visibility. |
 
+---
 ### Automation Workflow
 
 ```text
@@ -1019,7 +1117,7 @@ Python Automation Service
         ├── Generate Reports
         └── Publish Results
 ```
-
+---
 ### Key Capabilities
 
 - Automated platform health validation
@@ -1031,6 +1129,7 @@ Python Automation Service
 - Reduced manual intervention
 - Improved operational efficiency
 
+---
 ### Design Principles
 
 The platform automation services are designed around the following principles:
@@ -1039,112 +1138,6 @@ The platform automation services are designed around the following principles:
 - **Reliability** – Continuous validation helps detect issues before they impact workloads.
 - **Consistency** – Standardized automation ensures repeatable operational processes.
 - **Scalability** – Automation services can be extended to support additional operational use cases as the platform evolves.
-
----
-
-## Repository Overview
-
-The platform is organized into multiple repositories, following a modular architecture that separates infrastructure, platform services, application source code, and GitOps configuration. This approach improves maintainability, enables independent versioning, and aligns with production Platform Engineering practices.
-
-| Repository | Purpose |
-|------------|---------|
-| **platform-infra** | Provisions Google Cloud infrastructure and Kubernetes platform services using Terraform. |
-| **gitops-microservices-platform** | Stores Kubernetes manifests, Kustomize overlays, and ArgoCD Applications that define the desired cluster state. |
-| **voting-app** | Contains the application source code, Dockerfiles, unit tests, and GitHub Actions CI pipelines for the Vote, Result, and Worker services. |
-| **platform-automation** | Contains Python-based automation services for platform health validation, operational reporting, and scheduled maintenance tasks. |
-
-### Repository Responsibilities
-
-#### platform-infra
-
-Responsible for provisioning and managing the platform infrastructure, including:
-
-- Google Cloud infrastructure
-- Networking
-- Google Kubernetes Engine (GKE)
-- Cloud SQL
-- Artifact Registry
-- IAM and Workload Identity Federation
-- Kubernetes platform services
-- Terraform modules
-
----
-
-#### gitops-microservices-platform
-
-Acts as the GitOps repository and contains:
-
-- Kubernetes manifests
-- Kustomize base and overlays
-- ArgoCD Applications
-- Argo Rollouts
-- Gateway API resources
-- Environment-specific configurations
-
----
-
-#### voting-app
-
-Contains the application implementation, including:
-
-- Vote Service
-- Result Service
-- Worker Service
-- Dockerfiles
-- GitHub Actions CI pipelines
-
----
-
-#### platform-automation
-
-Provides operational automation, including:
-
-- Cluster health validation
-- Platform health reporting
-- Infrastructure validation
-- Scheduled maintenance
-- Operational reporting
-
-### Repository Relationships
-
-```text
-                Developer
-                     │
-                     ▼
-          voting-app Repository
-                     │
-         GitHub Actions CI Pipeline
-                     │
-                     ▼
-         Google Artifact Registry
-                     │
-                     ▼
-  gitops-microservices-platform
-                     │
-              ArgoCD GitOps
-                     │
-                     ▼
-          Google Kubernetes Engine
-                     ▲
-                     │
-         platform-infra Repository
-     (Terraform Infrastructure & Platform)
-                     │
-                     ▼
-        platform-automation Repository
-     (Health Checks & Operational Tasks)
-```
-
-### Benefits of the Multi-Repository Approach
-
-- Clear separation of responsibilities
-- Independent development and versioning
-- Improved maintainability
-- GitOps-driven deployments
-- Reusable infrastructure modules
-- Simplified collaboration
-- Better security and access control
-- Production-ready repository organization
 
 ---
 ## Demo Walkthrough
