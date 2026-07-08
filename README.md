@@ -69,12 +69,14 @@ Architecture at a glance
 
 ### Project Repositories
 
-| Repository | Link |
-|------------|------|
-| Infrastructure | https://github.com/stackcouture/platform-infra |
-| GitOps | https://github.com/stackcouture/gitops-microservices-platform |
-| Application | https://github.com/stackcouture/voting-app |
-| Platform Automation | https://github.com/stackcouture/platform-automation |
+## 📂 Project Repositories
+
+| Repository | Purpose | Link |
+|------------|---------|------|
+| 🏗️ Infrastructure | Terraform modules provisioning the complete GCP platform | https://github.com/stackcouture/platform-infra |
+| 🚀 GitOps | ArgoCD applications, ApplicationSets, Kustomize overlays and platform manifests | https://github.com/stackcouture/gitops-microservices-platform |
+| 🗳️ Voting Application | Vote, Worker and Result microservices with Kubernetes manifests | https://github.com/stackcouture/voting-app |
+| 🤖 Platform Automation | Kubernetes CronJobs, Slack notifications, backup automation and operational scripts | https://github.com/stackcouture/platform-automation |
 
 ---
 ## Platform Layers
@@ -726,6 +728,10 @@ The platform follows a **GitOps** operating model, where Git serves as the singl
 
 Direct deployments to the cluster are not performed. Instead, **ArgoCD** continuously monitors the GitOps repository and reconciles any detected changes automatically.
 
+---
+![GitOps Diagram](docs/images/ci-cd-gitops-workflow.png "GitOps Flow")
+
+---
 ### Workflow Overview
 
 ```text
