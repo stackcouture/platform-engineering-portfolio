@@ -33,7 +33,7 @@ This project addresses those gaps by implementing a production-inspired platform
 ---
 ## High-Level Architecture
 
-![Project Overview](docs/images/high_level_arch.png "Project Demo")
+![Project Overview](images/high_level_arch.png "Project Demo")
 
 ---
 ## Project Architecture
