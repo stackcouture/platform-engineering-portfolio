@@ -148,28 +148,12 @@ TLS certificates are automatically issued using **cert-manager** with **Cloudfla
 ---
 ### Progressive Delivery
 
-Application deployments use **Argo Rollouts** for canary releases.
+Application deployments use **Argo Rollouts** for canary releases and Blue-Green
 
 Typical rollout progression:
 
-```text
-Deploy New Version
-        │
-        ▼
-     5% Traffic
-        │
-        ▼
-   Health Verification
-        │
-        ▼
-    25% Traffic
-        │
-        ▼
-    50% Traffic
-        │
-        ▼
-   100% Production
-```
+![Rollouts Overview](images/rollouts.png "Rollouts Demo")
+
 
 If deployment health checks fail, the rollout pauses or can be rolled back before affecting all users.
 
