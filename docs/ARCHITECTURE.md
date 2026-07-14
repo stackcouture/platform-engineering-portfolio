@@ -220,7 +220,10 @@ This approach eliminates hardcoded credentials from the repository.
 
 Monitoring is centralized using Prometheus and Grafana.
 
-![Monitor](images/monitor2.png "Monitor")
+<p align="center">
+  <img src="images/monitor2.png" width="350" alt="Monitoring Flow">
+</p>
+
 
 The monitoring stack provides:
 
