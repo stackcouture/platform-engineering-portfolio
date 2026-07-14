@@ -73,33 +73,6 @@ Each layer has a well-defined responsibility and communicates with adjacent laye
 
 ![High Level](images/platform_3.png "High Level")
 
-```text
-                   Developers
-                        │
-                        ▼
-                GitHub Repositories
-                        │
-                        ▼
-             GitHub Actions (CI Pipeline)
-                        │
-                        ▼
-              Artifact Registry Images
-                        │
-                        ▼
-                 GitOps Repository
-                        │
-                        ▼
-                     Argo CD
-                        │
-                        ▼
-                 Google Kubernetes Engine
-                        │
-     ┌──────────────────┼──────────────────┐
-     │                  │                  │
-     ▼                  ▼                  ▼
- Platform          Applications      Data Services
- Components                           (Redis/PostgreSQL)
-```
 
 ---
 ## Platform Components
@@ -161,29 +134,8 @@ PostgreSQL
 
 Application delivery follows a GitOps workflow.
 
-```text
-Developer
-     │
-Commit Code
-     │
-     ▼
-GitHub Actions
-     │
-Build Image
-     │
-Security Scan
-     │
-Push Image
-     │
-Update GitOps Repository
-     │
-     ▼
-Argo CD
-     │
-Sync
-     │
-Deploy
-```
+![Deployment](images/deployment.png "Deployment")
+
 
 The Git repository is treated as the single source of truth for Kubernetes resources.
 
@@ -192,24 +144,8 @@ The Git repository is treated as the single source of truth for Kubernetes resou
 
 External requests follow the path below.
 
-```text
-Client
-   │
-   ▼
-Cloudflare DNS
-   │
-   ▼
-Gateway API
-   │
-   ▼
-Argo Rollouts
-   │
-   ▼
-Application Pods
-   │
-   ▼
-Redis / PostgreSQL
-```
+![Traffic Flow](images/traffic_flow.png "Traffic Flow")
+
 
 This architecture enables secure ingress, controlled traffic routing, and progressive deployments.
 
@@ -220,23 +156,7 @@ Application releases use Argo Rollouts instead of standard Kubernetes Deployment
 
 Typical rollout strategy:
 
-```text
-Deploy New Version
-        │
-        ▼
-      5%
-        │
-Health Verification
-        │
-        ▼
-      25%
-        │
-        ▼
-      50%
-        │
-        ▼
-     100%
-```
+![Rollouts Overview](images/rollouts.png "Rollouts Demo")
 
 Failed health checks pause or roll back the deployment before affecting all users.
 
