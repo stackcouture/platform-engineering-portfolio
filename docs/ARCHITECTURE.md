@@ -147,7 +147,9 @@ The Git repository is treated as the single source of truth for Kubernetes resou
 
 External requests follow the path below.
 
-![Traffic Flow](images/traffic_flow.png "Traffic Flow")
+<p align="center">
+  <img src="images/traffic_flow.png" width="350" alt="Traffic Flow">
+</p>
 
 
 This architecture enables secure ingress, controlled traffic routing, and progressive deployments.
