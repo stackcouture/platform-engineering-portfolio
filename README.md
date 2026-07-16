@@ -204,7 +204,12 @@ Explore the platform through the following documentation.
   <img src="assets/screenshots/architecture.png" width="550" alt="Architecture">
 </p>
 
----
+### CI/CD Demo 
+<p align="left">
+  <img src="docs/images/demo-latest.gif" width="550" alt="CI/CD Demo">
+</p>
+
+
 ### 🚀 GitOps with Argo CD
 <b> ArgoCD Output</b>
 <p align="left">
