@@ -468,3 +468,87 @@ This layered architecture provides several advantages:
 * Alignment with production Platform Engineering practices
 
 ---
+## Design Principles
+
+The Platform Engineering Portfolio is designed around a set of architectural principles that promote modularity, scalability, security, and operational excellence. These principles guide the organization of the repositories, infrastructure, platform services, and application workloads while reflecting production-inspired Platform Engineering practices.
+
+### Separation of Concerns
+
+Infrastructure provisioning, platform services, application source code, and operational automation are maintained in separate repositories. This separation provides clear ownership boundaries, simplifies maintenance, and allows each component to evolve independently.
+
+### Infrastructure as Code
+
+All cloud infrastructure and shared platform services are provisioned using Terraform. Infrastructure definitions are version-controlled, reusable, and repeatable, enabling consistent deployments across environments.
+
+### GitOps as the Source of Truth
+
+The desired state of the Kubernetes platform is stored in Git. Argo CD continuously reconciles the cluster with the Git repository, ensuring deployments remain declarative, auditable, and consistent.
+
+### Modular Architecture
+
+The platform is organized into reusable Terraform modules, Kubernetes manifests, and Kustomize overlays. This modular approach reduces duplication, promotes consistency, and simplifies the introduction of new environments or platform capabilities.
+
+### Environment Isolation
+
+Development and production environments are managed through dedicated Terraform configurations and Kustomize overlays. Environment-specific configuration is isolated while sharing common infrastructure and application definitions where appropriate.
+
+### Security by Default
+
+Security is integrated throughout the platform by combining identity management, policy enforcement, secret management, runtime security, and secure software delivery practices.
+
+Key security capabilities include:
+
+* Workload Identity Federation
+* External Secrets Operator
+* HashiCorp Vault integration
+* Kyverno policy enforcement
+* Falco runtime security
+* Network Policies
+* Container image security scanning
+
+### Platform Standardization
+
+Common platform services are deployed once and shared across workloads, providing consistent operational capabilities for all applications.
+
+Shared platform services include:
+
+* Argo CD
+* Argo Rollouts
+* Gateway API
+* NGINX Gateway Fabric
+* cert-manager
+* Prometheus
+* Grafana
+* Alertmanager
+* KEDA
+* Kubecost
+* Velero
+* Reloader
+
+### Automation First
+
+Automation is applied across infrastructure provisioning, application delivery, and day-2 operations to reduce manual effort and improve reliability.
+
+Automation includes:
+
+* Terraform infrastructure provisioning
+* GitHub Actions CI pipelines
+* GitOps continuous delivery
+* Automated container image publishing
+* Platform health validation
+* Scheduled operational tasks
+* Automated reporting
+
+### Observability by Design
+
+Monitoring, alerting, logging, and cost visibility are treated as core platform capabilities rather than optional add-ons. Shared observability services provide consistent operational insight across the platform.
+
+### Scalability and Maintainability
+
+The platform is designed to support future growth by using reusable modules, declarative configuration, GitOps workflows, and independent repositories. This structure allows new services, environments, and platform capabilities to be introduced with minimal changes to the existing architecture.
+
+### Summary
+
+These design principles establish a consistent foundation for provisioning infrastructure, operating Kubernetes, delivering applications, and automating platform operations. By combining Infrastructure as Code, GitOps, modular architecture, standardized platform services, and automation, the portfolio demonstrates a production-inspired Platform Engineering approach that emphasizes maintainability, security, scalability, and operational consistency.
+
+---
