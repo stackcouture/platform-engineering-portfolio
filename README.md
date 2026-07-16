@@ -155,6 +155,25 @@ Explore the platform through the following documentation.
 | 🏛️ [DECISIONS.md](docs/DECISIONS.md) | Architecture Decision Records (ADRs), design trade-offs, and technology choices. |
 
 ---
+## 🚀 Platform Capabilities
+
+| Area | Technologies |
+|------|--------------|
+| ☁️ Infrastructure | Terraform, Google Cloud Platform (GCP) |
+| ☸️ Kubernetes | Google Kubernetes Engine (GKE), Kubernetes |
+| 🔄 GitOps | Argo CD, ApplicationSets, Kustomize |
+| ⚙️ Continuous Integration | GitHub Actions |
+| 🚀 Progressive Delivery | Argo Rollouts |
+| 🔒 Security | Kyverno, Falco, RBAC |
+| 🔑 Secrets Management | External Secrets Operator, Google Secret Manager, Vault |
+| 🌐 Networking | Gateway API, NGINX Gateway Fabric, cert-manager |
+| 📊 Observability | Prometheus, Grafana, Alertmanager |
+| 📈 Autoscaling | Horizontal Pod Autoscaler (HPA), KEDA, Cluster Autoscaler |
+| 💾 Data Platform | PostgreSQL, Redis |
+| 💰 Cost Optimization | Kubecost |
+| 🤖 Platform Automation | Python Automation, Kubernetes CronJobs |
+
+---
 ## Key Capabilities
 
 - **Infrastructure as Code (IaC)** – Provision and manage cloud infrastructure using reusable Terraform modules with environment-specific configurations.
