@@ -181,7 +181,7 @@ Explore the platform through the following documentation.
 <table>
   <tr>
     <td align="center">
-      <img src="assets/screenshots/architecture.png" width="550" alt="Architecture"> </br>
+      <img src="assets/screenshots/argocd-output.png" width="650" alt="Architecture"> </br>
       <b>ArgoCD Output</b>
     </td>
   </tr>
