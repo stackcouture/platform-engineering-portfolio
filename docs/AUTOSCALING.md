@@ -45,7 +45,7 @@ The platform was designed to:
 ## 🏗️ Autoscaling Architecture
 
 <p align="left">
-  <img src="images/scaling.png" width="350" alt="Scaling Architecture">
+  <img src="images/scaling.png" width="550" alt="Scaling Architecture">
 </p>
 
 ---
