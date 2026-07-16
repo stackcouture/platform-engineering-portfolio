@@ -11,11 +11,6 @@ External traffic is protected using **Cloudflare DNS** and **TLS certificates** 
 The networking architecture is designed to be secure, scalable, and cloud-native while supporting GitOps and progressive delivery.
 
 ---
-<p align="left">
-  <img src="images/architecture_decision.png" width="550" alt="Platform Networking">
-</p>
-
----
 ## 📑 Table of Contents
 
 * 📖 Overview

@@ -9,6 +9,11 @@ Each decision records the problem being addressed, the selected solution, and th
 Documenting architectural decisions improves maintainability, provides implementation context, and demonstrates the trade-offs considered during platform design.
 
 ---
+<p align="left">
+  <img src="images/architecture_decision.png" width="550" alt="Architectuure Decision">
+</p>
+
+---
 ## 📑 Table of Contents
 
 * [📖 Overview](#-overview)
