@@ -22,6 +22,27 @@ the end-to-end lifecycle of designing, deploying, securing, observing, and
 operating a Kubernetes platform.
 
 ---
+## 📑 Table of Contents
+
+- [📖 Project Overview](#-project-overview)
+- [🏗️ Solution Architecture](#️-solution-architecture)
+- [🛠️ Technology Stack](#️-technology-stack)
+- [📂 Repository Structure](#-repository-structure)
+- [📚 Documentation](#-documentation)
+- [🚀 Platform Capabilities](#-platform-capabilities)
+- [✨ Platform Features](#-platform-features)
+- [📸 Demo Screenshots](#-demo-screenshots)
+  - [🏗️ Platform Architecture](#️-platform-architecture)
+  - [🚀 GitOps with Argo CD](#-gitops-with-argo-cd)
+  - [🚀 Argo Rollouts Strategy](#-argo-rollouts-strategy)
+  - [📊 Observability](#-observability)
+- [📊 Project at a Glance](#-project-at-a-glance)
+- [🎓 Learning Outcomes](#-learning-outcomes)
+- [🔧 Troubleshooting Experience](#-troubleshooting-experience)
+- [🎯 Key Takeaways](#-key-takeaways)
+- [🙏 Acknowledgements](#acknowledgements)
+
+---
 ## 🏗️ Solution Architecture
 
 The following architecture illustrates the complete platform deployment on GCP.
