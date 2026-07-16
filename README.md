@@ -171,8 +171,10 @@ Explore the platform through the following documentation.
 ## 📸 Demo Screenshots
 
 ### 🏗️ Platform Architecture
-![Architecture](assets/screenshots/architecture.png)
 
+<p align="left">
+  <img src="assets/screenshots/architecture.png" width="350" alt="Architecture">
+</p>
 
 ---
 ## Learning Outcomes
