@@ -173,22 +173,27 @@ Explore the platform through the following documentation.
 ### 🏗️ Platform Architecture
 
 <p align="left">
-  <img src="assets/screenshots/architecture.png" width="350" alt="Architecture">
+  <img src="assets/screenshots/architecture.png" width="550" alt="Architecture">
 </p>
 
 ---
 ### 🚀 GitOps with Argo CD
-<div>
-<p>
-  <img src="assets/screenshots/vote-argocd.png" width="350" alt="Vote ArgoCD">
-</p>
-<p>
-  <img src="assets/screenshots/worker-argocd.png" width="350" alt="Worker ArgoCD">
-</p>
-<p>
-  <img src="assets/screenshots/result-argocd.png" width="350" alt="Result ArgoCD">
-</p>
-</div>
+<table>
+  <tr>
+    <td align="center">
+      <img src="assets/screenshots/vote-argocd.png" width="300"><br>
+      <b>Vote</b>
+    </td>
+    <td align="center">
+      <img src="assets/screenshots/worker-argocd.png" width="300"><br>
+      <b>Worker</b>
+    </td>
+    <td align="center">
+      <img src="assets/screenshots/result-argocd.png" width="300"><br>
+      <b>Result</b>
+    </td>
+  </tr>
+</table>
 
 
 ---
