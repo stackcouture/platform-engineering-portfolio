@@ -1,4 +1,4 @@
-### 🚀 Production-Inspired Cloud-Native Platform on Google Kubernetes Engine (GKE)
+### Production-Inspired Cloud-Native Platform on Google Kubernetes Engine (GKE)
 
 A production-inspired Kubernetes platform demonstrating Infrastructure as Code, GitOps, DevSecOps, Progressive Delivery, Observability, Runtime Security, and Automated Platform Operations.
 
@@ -22,13 +22,13 @@ the end-to-end lifecycle of designing, deploying, securing, observing, and
 operating a Kubernetes platform.
 
 ---
-### Solution Architecture
+## 🏗️ Solution Architecture
 
 The following architecture illustrates the complete platform deployment on GCP.
 ![Architecture Diagram](docs/images/platform_solution.png "Platform Architecture")
 
 ---
-###  Platform Highlights
+## 🛠️ Technology Stack
 
 <p align="left">
 
@@ -49,6 +49,21 @@ The following architecture illustrates the complete platform deployment on GCP.
 ![cert-manager](https://img.shields.io/badge/cert--manager-TLS_Automation-4285F4?style=for-the-badge)
 
 </p>
+
+| Category | Technologies |
+|----------|--------------|
+| ☁️ Cloud | Google Cloud Platform (GCP) |
+| 🏗️ Infrastructure as Code | Terraform |
+| ☸️ Kubernetes | Google Kubernetes Engine (GKE) |
+| 🚀 GitOps | Argo CD, Kustomize |
+| ⚙️ CI/CD | GitHub Actions |
+| 📦 Progressive Delivery | Argo Rollouts |
+| 🔐 Security | Kyverno, Falco, External Secrets, Vault |
+| 🌐 Networking | Gateway API, NGINX Gateway Fabric, cert-manager |
+| 📊 Observability | Prometheus, Grafana, Alertmanager |
+| 📈 Autoscaling | HPA, KEDA |
+| 💰 Cost Management | Kubecost |
+| 💾 Backup & Recovery | Velero |
 
 ---
 ## 📂 Repository Structure
