@@ -2,7 +2,13 @@
 
 A production-inspired Kubernetes platform demonstrating Infrastructure as Code, GitOps, DevSecOps, Progressive Delivery, Observability, Runtime Security, and Automated Platform Operations.
 
-![Project Overview](docs/images/Canary-vs-blue-green.gif "Project Demo")
+<!-- ![Project Overview](docs/images/Canary-vs-blue-green.gif "Project Demo") -->
+
+---
+## Solution Architecture
+
+The following architecture illustrates the complete platform deployment on GCP.
+![Architecture Diagram](docs/images/platform_solution.png "Platform Architecture")
 
 ---
 ## 📑 Table of Contents
@@ -38,30 +44,6 @@ A production-inspired Kubernetes platform demonstrating Infrastructure as Code, 
 - [🙏 Acknowledgements](#acknowledgements)
 
 ---
-## Solution Architecture
-
-The following architecture illustrates the complete platform deployment on GCP.
-![Architecture Diagram](docs/images/platform_solution.png "Platform Architecture")
-
-
-This platform is built on a layered architecture that cleanly separates infrastructure provisioning, platform services, application delivery, and operations. Each layer owns a single responsibility, which keeps the system modular, independently scalable, and easier to secure and maintain as it grows.
-
-The entire stack runs on Google Cloud Platform (GCP) and is built around modern Platform Engineering and GitOps principles — infrastructure, Kubernetes platform services, application deployments, security, and observability are all automated rather than manually operated.
-
-Architecture at a glance
-
-| Layer | Responsibility | Key Technologies |
-|-------|----------------|------------------|
-| **Infrastructure** | Cloud foundation and networking | Terraform, Google Cloud Platform (GCP), VPC, GKE, Cloud SQL, Artifact Registry |
-| **Platform** | Shared Kubernetes platform services | ArgoCD, Argo Rollouts, Gateway API, Kyverno, Falco |
-| **GitOps** | Declarative, version-controlled application delivery | ArgoCD, Kustomize |
-| **Application** | Cloud-native microservices | Vote Service, Result Service, Worker Service, PostgreSQL, Redis |
-| **CI/CD** | Build, test, secure, and deploy applications | GitHub Actions, Trivy, Cosign, SBOM, Artifact Registry |
-| **Security** | Defense-in-depth and policy enforcement | Kyverno, Kubernetes RBAC, Workload Identity, Falco |
-| **Observability** | Monitoring, dashboards, and alerting | Prometheus, Grafana, Alertmanager |
-| **Platform Automation** | Operational automation and self-healing | Python-based automation services |
-
-
 ### Project Repositories
 
 ## 📂 Project Repositories
