@@ -208,6 +208,21 @@ Explore the platform through the following documentation.
 </p>
 
 ---
+### 📊 Observability
+<b>Appplication SLO Voting</b>
+<p align="left">
+  <img src="assets/screenshots/grafana/appplication-slo-voting-1.png" width="650" alt="Appplication SLO Voting">
+</p>
+<b>Cluster CPU-memory Utilization</b>
+<p align="left">
+  <img src="assets/screenshots/grafana/cluster-cpu-memory-utilization.png" width="650" alt="cluster-cpu-memory-utilization">
+</p>
+<b>Application Latency</b>
+<p align="left">
+  <img src="assets/screenshots/grafana/latency-applciation.png" width="650" alt="Latency Application">
+</p>
+
+---
 ## Learning Outcomes
 
 Over the past months, I designed, deployed, troubleshot, and operated a production-style Platform Engineering environment on **Google Cloud Platform (GCP)**. This project provided hands-on experience across the complete software delivery lifecycle—from infrastructure provisioning to Kubernetes operations, GitOps, security, observability, and automation.
