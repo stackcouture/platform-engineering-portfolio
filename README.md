@@ -22,9 +22,9 @@ operating a Kubernetes platform.
 ---
 ## Table of Contents
 
-- [Project Overview](#-project-overview)
-- [Solution Architecture](#️-solution-architecture)
-- [Technology Stack](#️-technology-stack)
+- [Project Overview](#project-overview)
+- [Solution Architecture](#️solution-architecture)
+- [Technology Stack](#️technology-stack)
 - [Repository Structure](#-repository-structure)
 - [Documentation](#-documentation)
 - [Platform Capabilities](#-platform-capabilities)
