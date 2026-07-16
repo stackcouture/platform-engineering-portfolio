@@ -62,32 +62,9 @@ When a change is detected:
 ---
 ## GitOps Architecture
 
-```text
-                 Developers
-                      │
-                      ▼
-         Application Source Repository
-                      │
-              GitHub Actions (CI)
-                      │
-Build • Test • Scan • Sign • Push Image
-                      │
-                      ▼
-        Google Artifact Registry
-                      │
-Update GitOps Repository (Image Tag)
-                      │
-                      ▼
-              GitOps Repository
-                      │
-                      ▼
-                   Argo CD
-                      │
-           Continuous Reconciliation
-                      │
-                      ▼
-        Google Kubernetes Engine (GKE)
-```
+<p align="center">
+  <img src="images/gitops.png" width="550" alt="Project Overview">
+</p>
 
 Git remains the authoritative source for the desired state of the Kubernetes cluster, while Argo CD ensures that the cluster continuously matches that state.
 
