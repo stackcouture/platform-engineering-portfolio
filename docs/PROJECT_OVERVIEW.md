@@ -31,6 +31,41 @@ Many Kubernetes sample projects focus only on deploying containerized applicatio
 This project addresses those gaps by implementing a production-inspired platform that demonstrates how Kubernetes infrastructure can be provisioned, managed, secured and operated using automation and declarative workflows.
 
 ---
+## 📑 Table of Contents
+- [🏗️ High-Level Architecture](#high-level-architecture)
+- [🏛️ Project Architecture](#project-architecture)
+  - [☁️ Infrastructure Layer](#infrastructure-layer)
+  - [⚙️ Platform Layer](#platform-layer)
+  - [🔨 CI Pipeline](#ci-pipeline)
+  - [🚀 GitOps Deployment](#gitops-deployment)
+  - [📦 Application Layer](#application-layer)
+  - [🌐 Networking](#networking)
+  - [🔄 Progressive Delivery](#progressive-delivery)
+  - [🔒 Platform Security](#platform-security)
+    - [🛡️ Image Security](#image-security)
+    - [📦 Supply Chain Security](#supply-chain-security)
+    - [📋 Policy Enforcement](#policy-enforcement)
+    - [🔑 Secret Management](#secret-management)
+    - [🔐 TLS Management](#tls-management)
+  - [📈 Autoscaling](#autoscaling)
+    - [📊 Horizontal Pod Autoscaler (HPA)](#horizontal-pod-autoscaler-hpa)
+    - [⚡ KEDA](#keda)
+  - [📊 Observability](#observability)
+- [🧩 Platform Services](#platform-services)
+- [⚠️ Challenges Encountered](#challenges-encountered)
+- [✅ Project Outcomes](#project-outcomes)
+- [🛠️ Technology Stack](#technology-stack)
+  - [☁️ Cloud](#cloud)
+  - [🏗️ Infrastructure](#infrastructure)
+  - [📦 Container Platform](#container-platform)
+  - [🚀 CI/CD](#cicd)
+  - [🛡️ DevSecOps](#devsecops)
+  - [📊 Observability](#observability)
+  - [🌐 Networking](#networking)
+  - [🗄️ Databases](#databases)
+- [🎓 Key Learning Outcomes](#key-learning-outcomes)
+
+---
 ## High-Level Architecture
 
 <p align="center">
