@@ -3,7 +3,7 @@
 A production-inspired Kubernetes platform demonstrating Infrastructure as Code, GitOps, DevSecOps, Progressive Delivery, Observability, Runtime Security, and Automated Platform Operations.
 
 ---
-## Project Overview
+## Overview
 
 This repository demonstrates how a modern cloud-native platform can be built
 using production-inspired platform engineering practices on Google Kubernetes
@@ -22,8 +22,8 @@ operating a Kubernetes platform.
 ---
 ## Table of Contents
 
-- [Project Overview](#project-overview)
-- [Solution Architecture](#️solution-architecture)
+- [Overview](#overview)
+- [Architecture](#architecture)
 - [Technology Stack](#️technology-stack)
 - [Repository Structure](#-repository-structure)
 - [Documentation](#-documentation)
@@ -41,7 +41,7 @@ operating a Kubernetes platform.
 - [Acknowledgements](#acknowledgements)
 
 ---
-## Solution Architecture
+## Architecture
 
 The following architecture illustrates the complete platform deployment on GCP.
 ![Architecture Diagram](docs/images/platform_solution.png "Platform Architecture")
