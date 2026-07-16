@@ -178,27 +178,33 @@ Explore the platform through the following documentation.
 
 ---
 ### 🚀 GitOps with Argo CD
-
+<b> ArgoCD Output</b>
 <p align="left">
   <img src="assets/screenshots/argocd-output.png" width="650" alt="ArgoCD Output">
 </p>
+
+<b>Vote ArgoCD</b>
 <p align="left">
   <img src="assets/screenshots/vote-argocd.png" width="650" alt="Vote ArgoCD">
 </p>
+<b>Worker ArgoCD</b>
 <p align="left">
   <img src="assets/screenshots/worker-argocd.png" width="650" alt="Worker ArgoCD">
 </p>
+<b>Result ArgoCD</b>
 <p align="left">
   <img src="assets/screenshots/result-argocd.png" width="650" alt="Result ArgoCD">
 </p>
 
 ---
 ### 🚀 Argo Rollouts Strategy
+<b>Blue-Green Deployment</b>
 <p align="left">
-  <img src="assets/screenshots/blue-green-deployment.gif" width="650" alt="Result ArgoCD">
+  <img src="assets/screenshots/blue-green-deployment.gif" width="650" alt="Blue-Green Deployment">
 </p>
+<b>Canary Deployment</b>
 <p align="left">
-  <img src="assets/screenshots/canary-deployment.gif" width="650" alt="Result ArgoCD">
+  <img src="assets/screenshots/canary-deployment.gif" width="650" alt="Canary Deployment">
 </p>
 
 ---
