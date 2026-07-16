@@ -208,3 +208,118 @@ Platform Engineering Portfolio
 This repository organization follows a production-oriented Platform Engineering model by clearly separating infrastructure provisioning, platform management, application development, and operational automation. Each repository has a distinct responsibility while integrating through GitOps workflows to deliver a secure, scalable, and maintainable Kubernetes platform.
 
 ---
+## Repository Responsibilities
+
+Each repository in the Platform Engineering Portfolio has a clearly defined responsibility. This separation of concerns improves maintainability, enables independent versioning, and allows infrastructure, platform services, application code, and operational tooling to evolve independently while remaining integrated through GitOps workflows.
+
+### platform-infra
+
+The **platform-infra** repository is responsible for provisioning and managing the underlying Google Cloud infrastructure and Kubernetes platform services using Terraform.
+
+**Key responsibilities include:**
+
+* Provisioning Google Cloud infrastructure
+* Virtual Private Cloud (VPC) networking
+* Google Kubernetes Engine (GKE) clusters and node pools
+* Cloud SQL instances
+* Artifact Registry repositories
+* Cloud Storage buckets
+* Identity and Access Management (IAM)
+* Workload Identity Federation
+* Reusable Terraform modules
+* Environment-specific infrastructure (Development and Production)
+* Installation of shared Kubernetes platform components, including:
+
+  * Argo CD
+  * Argo Rollouts
+  * Cert-Manager
+  * External Secrets Operator
+  * Kyverno
+  * Falco
+  * KEDA
+  * Kubecost
+  * Prometheus and Grafana
+  * NGINX Gateway Fabric
+  * Reloader
+  * Storage Classes
+  * HashiCorp Vault
+  * Velero
+
+---
+
+### gitops-microservices-platform
+
+The **gitops-microservices-platform** repository serves as the GitOps source of truth for the Kubernetes platform. It defines the desired cluster state and manages platform resources, infrastructure workloads, application deployments, and governance through Argo CD.
+
+**Key responsibilities include:**
+
+* Kubernetes manifests
+* Kustomize base and environment overlays
+* Application deployments
+* Platform services
+* Infrastructure workloads
+* Argo CD Applications and ApplicationSets
+* Gateway API resources
+* Ingress configuration
+* Cluster-wide configuration
+* Security policies
+* Network Policies
+* Environment-specific configurations
+* Governance resources
+* Platform automation manifests
+
+---
+
+### voting-app
+
+The **voting-app** repository contains the application source code and Continuous Integration (CI) pipelines for the platform's microservices.
+
+**Key responsibilities include:**
+
+* Vote service
+* Result service
+* Worker service
+* Dockerfiles
+* Unit and integration tests
+* GitHub Actions CI workflows
+* Container image build automation
+* Security scanning
+* Software Bill of Materials (SBOM) generation
+* Container image publishing to Artifact Registry
+
+---
+
+### platform-automation
+
+The **platform-automation** repository provides automation for day-2 platform operations, reducing manual operational effort and improving platform reliability.
+
+**Key responsibilities include:**
+
+* Platform health validation
+* Cluster health checks
+* Infrastructure validation
+* Scheduled operational tasks
+* Automated reporting
+* Operational dashboards and reports
+* Maintenance automation
+* Python-based automation scripts
+* Platform diagnostics
+* Day-2 operational tooling
+
+---
+
+### Responsibility Boundaries
+
+The repository organization follows clear ownership boundaries:
+
+| Repository                        | Primary Ownership                                                                    |
+| --------------------------------- | ------------------------------------------------------------------------------------ |
+| **platform-infra**                | Cloud infrastructure provisioning and shared platform installation                   |
+| **gitops-microservices-platform** | Kubernetes desired state, GitOps deployments, platform configuration, and governance |
+| **voting-app**                    | Application source code, testing, container image creation, and CI pipelines         |
+| **platform-automation**           | Operational automation, health validation, reporting, and maintenance                |
+
+By assigning a single responsibility to each repository, the platform remains modular, easier to maintain, and aligned with production Platform Engineering practices. Infrastructure provisioning, GitOps configuration, application development, and operational automation can be managed independently while working together through a unified GitOps workflow.
+
+
+---
