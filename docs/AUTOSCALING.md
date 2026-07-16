@@ -44,42 +44,9 @@ The platform was designed to:
 ---
 ## 🏗️ Autoscaling Architecture
 
-```text
-                    User Requests
-                          │
-                          ▼
-                     Vote Service
-                          │
-                CPU Utilization
-                          │
-                          ▼
-                         HPA
-                          │
-                          ▼
-               Scale Vote Application
-────────────────────────────────────────────
-
-                 Redis Queue
-                      │
-              Queue Length
-                      │
-                      ▼
-                    KEDA
-                      │
-                      ▼
-             Scale Worker Pods
-────────────────────────────────────────────
-
-          Kubernetes Cluster
-                   │
-            Pending Pods
-                   │
-                   ▼
-        Cluster Autoscaler
-                   │
-                   ▼
-           Scale Worker Nodes
-```
+<p align="left">
+  <img src="images/scaling.png" width="350" alt="Scaling Architecture">
+</p>
 
 ---
 ## 📊 Horizontal Pod Autoscaler (HPA)
