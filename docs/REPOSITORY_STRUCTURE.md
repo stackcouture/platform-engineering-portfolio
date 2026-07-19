@@ -1,8 +1,10 @@
-## Platform Overview
+## Overview
 
-This Platform Engineering Portfolio demonstrates a **production-inspired cloud-native platform** built on **Google Kubernetes Engine (GKE)** using modern **Platform Engineering**, **GitOps**, and **Infrastructure as Code (IaC)** practices.
+**Cloud Native GKE** is a production-inspired cloud-native platform built on **Google Kubernetes Engine (GKE)** using modern **Platform Engineering**, **GitOps**, and **Infrastructure as Code (IaC)** practices.
 
-Rather than focusing solely on deploying an application, the portfolio showcases how a reusable Kubernetes platform can be designed, provisioned, secured, operated, and maintained using a modular **multi-repository architecture**. Each repository has a well-defined responsibility, enabling independent development, versioning, and lifecycle management while reflecting practices commonly adopted by engineering teams managing production Kubernetes environments.
+Rather than focusing solely on deploying an application, the project demonstrates how a reusable Kubernetes platform can be designed, provisioned, secured, operated, and maintained using a modular **multi-repository architecture**. Each repository has a clearly defined responsibility, enabling independent development, versioning, automated delivery, and lifecycle management while reflecting engineering practices commonly adopted for production Kubernetes environments.
+
+The platform integrates infrastructure provisioning, GitOps-based continuous delivery, Kubernetes platform services, networking, security, observability, autoscaling, progressive delivery, and operational automation into a cohesive cloud-native ecosystem. All infrastructure and Kubernetes resources are managed declaratively, providing a consistent, repeatable, and auditable deployment workflow.
 
 ---
 ## High-Level Architecture
@@ -56,10 +58,10 @@ The platform follows a **multi-repository architecture** that separates infrastr
 
 | Repository                        | Purpose                                                                                                                                                                                                         |
 | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **platform-infra**                | Provisions Google Cloud infrastructure and Kubernetes platform services using Terraform, including networking, GKE, IAM, Cloud SQL, Artifact Registry, and shared platform components.                          |
-| **gitops-microservices-platform** | Serves as the GitOps repository containing Kubernetes manifests, Kustomize overlays, Argo CD Applications, platform services, security policies, governance resources, and environment-specific configurations. |
+| **gke-infrastructure**                | Provisions Google Cloud infrastructure and Kubernetes platform services using Terraform, including networking, GKE, IAM, Cloud SQL, Artifact Registry, and shared platform components.                          |
+| **gke-gitops** | Serves as the GitOps repository containing Kubernetes manifests, Kustomize overlays, Argo CD Applications, platform services, security policies, governance resources, and environment-specific configurations. |
 | **voting-app**                    | Contains the source code for the Vote, Result, and Worker microservices, along with Dockerfiles, unit tests, and GitHub Actions CI pipelines for building, testing, scanning, and publishing container images.  |
-| **platform-automation**           | Provides Python-based automation for day-2 platform operations, including health validation, operational reporting, scheduled maintenance, and infrastructure validation tasks.                                 |
+| **cluster-operations**           | Provides Python-based automation for day-2 platform operations, including health validation, operational reporting, scheduled maintenance, and infrastructure validation tasks.                                 |
 
 This repository organization promotes modularity, improves maintainability, simplifies change management, and aligns with production Platform Engineering practices where infrastructure, platform services, application code, and operational tooling evolve independently while remaining integrated through GitOps workflows.
 
@@ -69,9 +71,9 @@ This repository organization promotes modularity, improves maintainability, simp
 The Platform Engineering Portfolio is organized into multiple repositories, each responsible for a specific aspect of the platform. This modular structure separates infrastructure provisioning, GitOps configuration, application development, and operational automation, making the platform easier to maintain, scale, and evolve.
 
 ```text
-Platform Engineering Portfolio
+cloud-native-gke
 │
-├── platform-infra/                    # Infrastructure as Code (Terraform)
+├── gke-infrastructure/                    # Infrastructure as Code (Terraform)
 │   │
 │   ├── .github/
 │   │   ├── actions/
@@ -133,7 +135,7 @@ Platform Engineering Portfolio
 │               ├── vault/
 │               └── velero/
 │
-├── gitops-microservices-platform/     # GitOps Repository
+├── gke-gitops/                               # GitOps Repository
 │   │
 │   ├── apps/
 │   │   ├── vote/
@@ -199,29 +201,18 @@ Platform Engineering Portfolio
 │   └── .github/
 │       └── workflows/
 │
-└── platform-automation/               # Platform Automation
+└── cluster-operations/               # Day-2 Operations 
     └── daily-platform-report/
 ```
-
-### Repository Layout Summary
-
-| Repository                        | Primary Responsibility                                                                                                                                                                                       |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **platform-infra**                | Terraform modules and environment configurations that provision Google Cloud infrastructure and install shared Kubernetes platform services.                                                                 |
-| **gitops-microservices-platform** | GitOps repository that defines the desired cluster state through Kubernetes manifests, Kustomize overlays, Argo CD Applications, platform services, security policies, governance resources, and automation. |
-| **voting-app**                    | Application source code for the Vote, Result, and Worker microservices, including Dockerfiles and GitHub Actions CI pipelines.                                                                               |
-| **platform-automation**           | Python-based automation for day-2 platform operations, health validation, reporting, and scheduled maintenance tasks.                                                                                        |
-
-This repository organization follows a production-oriented Platform Engineering model by clearly separating infrastructure provisioning, platform management, application development, and operational automation. Each repository has a distinct responsibility while integrating through GitOps workflows to deliver a secure, scalable, and maintainable Kubernetes platform.
 
 ---
 ## Repository Responsibilities
 
 Each repository in the Platform Engineering Portfolio has a clearly defined responsibility. This separation of concerns improves maintainability, enables independent versioning, and allows infrastructure, platform services, application code, and operational tooling to evolve independently while remaining integrated through GitOps workflows.
 
-### platform-infra
+### gke-infrastructure
 
-The **platform-infra** repository is responsible for provisioning and managing the underlying Google Cloud infrastructure and Kubernetes platform services using Terraform.
+The **gke-infrastructure** repository is responsible for provisioning and managing the underlying Google Cloud infrastructure and Kubernetes platform services using Terraform.
 
 **Key responsibilities include:**
 
@@ -253,10 +244,9 @@ The **platform-infra** repository is responsible for provisioning and managing t
   * Velero
 
 ---
+### gke-gitops
 
-### gitops-microservices-platform
-
-The **gitops-microservices-platform** repository serves as the GitOps source of truth for the Kubernetes platform. It defines the desired cluster state and manages platform resources, infrastructure workloads, application deployments, and governance through Argo CD.
+The **gke-gitops** repository serves as the GitOps source of truth for the Kubernetes platform. It defines the desired cluster state and manages platform resources, infrastructure workloads, application deployments, and governance through Argo CD.
 
 **Key responsibilities include:**
 
@@ -276,7 +266,6 @@ The **gitops-microservices-platform** repository serves as the GitOps source of 
 * Platform automation manifests
 
 ---
-
 ### voting-app
 
 The **voting-app** repository contains the application source code and Continuous Integration (CI) pipelines for the platform's microservices.
@@ -295,10 +284,9 @@ The **voting-app** repository contains the application source code and Continuou
 * Container image publishing to Artifact Registry
 
 ---
+### cluster-operations
 
-### platform-automation
-
-The **platform-automation** repository provides automation for day-2 platform operations, reducing manual operational effort and improving platform reliability.
+The **cluster-operations** repository provides automation for day-2 platform operations, reducing manual operational effort and improving platform reliability.
 
 **Key responsibilities include:**
 
@@ -314,17 +302,16 @@ The **platform-automation** repository provides automation for day-2 platform op
 * Day-2 operational tooling
 
 ---
-
 ### Responsibility Boundaries
 
 The repository organization follows clear ownership boundaries:
 
 | Repository                        | Primary Ownership                                                                    |
 | --------------------------------- | ------------------------------------------------------------------------------------ |
-| **platform-infra**                | Cloud infrastructure provisioning and shared platform installation                   |
-| **gitops-microservices-platform** | Kubernetes desired state, GitOps deployments, platform configuration, and governance |
+| **gke-infrastructure**                | Cloud infrastructure provisioning and shared platform installation                   |
+| **gke-gitops** | Kubernetes desired state, GitOps deployments, platform configuration, and governance |
 | **voting-app**                    | Application source code, testing, container image creation, and CI pipelines         |
-| **platform-automation**           | Operational automation, health validation, reporting, and maintenance                |
+| **cluster-operations**           | Operational automation, health validation, reporting, and maintenance                |
 
 By assigning a single responsibility to each repository, the platform remains modular, easier to maintain, and aligned with production Platform Engineering practices. Infrastructure provisioning, GitOps configuration, application development, and operational automation can be managed independently while working together through a unified GitOps workflow.
 
@@ -379,10 +366,10 @@ The repositories work together to deliver applications to the Kubernetes platfor
 
 1. Developers implement application features in the **voting-app** repository.
 2. GitHub Actions automatically builds, tests, scans, and publishes container images to **Google Artifact Registry**.
-3. The **gitops-microservices-platform** repository stores the desired Kubernetes cluster state, including application manifests, platform resources, and environment-specific Kustomize overlays.
+3. The **gke-gitops** repository stores the desired Kubernetes cluster state, including application manifests, platform resources, and environment-specific Kustomize overlays.
 4. **Argo CD** continuously monitors the GitOps repository and synchronizes changes to the Kubernetes cluster.
-5. The **platform-infra** repository provisions and manages the Google Cloud infrastructure, Kubernetes cluster, and shared platform services using Terraform.
-6. The **platform-automation** repository performs day-2 operational tasks such as health validation, platform reporting, diagnostics, and scheduled maintenance.
+5. The **gke-infrastructure** repository provisions and manages the Google Cloud infrastructure, Kubernetes cluster, and shared platform services using Terraform.
+6. The **cluster-operations** repository performs day-2 operational tasks such as health validation, platform reporting, diagnostics, and scheduled maintenance.
 
 ### End-to-End Delivery Workflow
 
