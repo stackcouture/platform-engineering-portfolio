@@ -99,7 +99,7 @@ Every workload should expose metrics and be observable through centralized monit
 The platform consists of four logical layers.
 
 <p align="left">
-  <img src="images/platform_2.png" width="450" alt="Platform Layers">
+  <img src="images/platform_2.png" width="650" alt="Platform Layers">
 </p>
 
 
@@ -109,7 +109,7 @@ Each layer has a well-defined responsibility and communicates with adjacent laye
 ## High-Level Architecture
 
 <p align="left">
-  <img src="images/platform_3.png" width="450" alt="High Level">
+  <img src="images/platform_3.png" width="650" alt="High Level">
 </p>
 
 ---
