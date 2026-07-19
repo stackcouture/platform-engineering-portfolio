@@ -1,8 +1,8 @@
 
-**Cloud-Native on Google Kubernetes Engine (GKE)**
+# **Cloud-Native on Google Kubernetes Engine (GKE)**
 
 ---
-## Project Objective
+## Objective
 
 **Cloud Native GKE** is a production-inspired Platform Engineering project that demonstrates how to design, build, and operate a modern Kubernetes platform on **Google Kubernetes Engine (GKE)** using cloud-native technologies and GitOps principles.
 
