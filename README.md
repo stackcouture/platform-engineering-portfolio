@@ -76,7 +76,6 @@ The primary objective of this repository is to demonstrate practical experience 
 ---
 ## Architecture
 
-The following architecture illustrates the complete deployment on GCP.
 ![Architecture Diagram](docs/images/cloud-native-2.png "Cloud-Native Architecture")
 
 ---
