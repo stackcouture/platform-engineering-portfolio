@@ -1,8 +1,8 @@
-## 🌐 Platform Networking
+##  Networking
 
-### 📖 Overview
+### Overview
 
-This document describes the networking architecture implemented for the **Production-Inspired Platform Engineering on Google Kubernetes Engine (GKE)** project.
+This document describes the networking architecture implemented for the **Cloud-Native Engineering on Google Kubernetes Engine (GKE)** project.
 
 The platform uses the **Kubernetes Gateway API** together with **NGINX Gateway Fabric** to provide modern traffic management, secure ingress, TLS termination, and application routing.
 
@@ -11,25 +11,27 @@ External traffic is protected using **Cloudflare DNS** and **TLS certificates** 
 The networking architecture is designed to be secure, scalable, and cloud-native while supporting GitOps and progressive delivery.
 
 ---
-## 📑 Table of Contents
+## Table of Contents
 
-* 📖 Overview
-* 🎯 Networking Goals
-* 🏗️ Networking Architecture
-* 🌍 External Traffic Flow
-* 🚪 Gateway API
-* 🌐 HTTP Routing
-* 🔐 TLS Management
-* ☁️ Cloudflare Integration
-* 🔄 Progressive Traffic Management
-* 🛰️ Internal Service Communication
-* 📋 Networking Benefits
-* ⚠️ Challenges Encountered
-* 🎓 Key Learnings
-* 📝 Summary
+- [Overview](#overview)
+- [Networking Goals](#networking-goals)
+- [Networking Architecture](#networking-architecture)
+- [External Traffic Flow](#external-traffic-flow)
+- [Gateway API](#gateway-api)
+- [HTTP Routing](#http-routing)
+- [TLS Management](#tls-management)
+- [Cloudflare Integration](#cloudflare-integration)
+- [Progressive Traffic Management](#progressive-traffic-management)
+  - [Canary Deployment](#canary-deployment)
+  - [Blue-Green Deployment](#blue-green-deployment)
+- [Internal Service Communication](#internal-service-communication)
+- [Networking Benefits](#networking-benefits)
+- [Challenges Encountered](#challenges-encountered)
+- [Key Learnings](#key-learnings)
+- [Summary](#summary)
 
 ---
-## 🎯 Networking Goals
+## Networking Goals
 
 The networking layer was designed with the following objectives:
 
@@ -43,16 +45,16 @@ The networking layer was designed with the following objectives:
 * Simplified service exposure
 
 ---
-## 🏗️ Networking Architecture
+## Networking Architecture
 
-<p align="center">
-  <img src="images/traffic_flow.png" width="350" alt="Platform Networking">
+<p align="left">
+  <img src="images/traffic_flow.png" width="350" alt="Networking">
 </p>
 
 The networking stack routes incoming requests from the Internet through Cloudflare and Gateway API before reaching application workloads.
 
 ---
-## 🌍 External Traffic Flow
+## External Traffic Flow
 
 Client requests follow the networking path below.
 
@@ -84,7 +86,7 @@ Redis / PostgreSQL
 Traffic is securely routed to Kubernetes services using Gateway API resources.
 
 ---
-## 🚪 Gateway API
+## Gateway API
 
 The platform adopts the Kubernetes **Gateway API** as the primary ingress solution.
 
@@ -99,7 +101,7 @@ Responsibilities include:
 * Traffic delegation
 
 ---
-## 🌐 HTTP Routing
+## HTTP Routing
 
 Application routing is managed using **HTTPRoute** resources.
 
@@ -118,7 +120,7 @@ Routes are configured for platform services and application workloads, including
 This provides centralized and declarative traffic management.
 
 ---
-## 🔐 TLS Management
+## TLS Management
 
 TLS certificates are managed automatically using **cert-manager**.
 
@@ -138,7 +140,7 @@ Certificate lifecycle includes:
 HTTPS is enabled for all externally exposed services.
 
 ---
-## ☁️ Cloudflare Integration
+## Cloudflare Integration
 
 Cloudflare provides the external DNS layer for the platform.
 
@@ -152,7 +154,7 @@ Responsibilities include:
 Cloudflare integrates with cert-manager to automate certificate issuance through DNS validation.
 
 ---
-## 🔄 Progressive Traffic Management
+## Progressive Traffic Management
 
 Application deployments use **Argo Rollouts** together with the Gateway API.
 
@@ -181,7 +183,7 @@ Traffic is switched only after the new environment passes validation.
 This minimizes deployment risk and supports rapid rollback.
 
 ---
-## 🛰️ Internal Service Communication
+## Internal Service Communication
 
 Applications communicate internally using Kubernetes Services.
 
@@ -203,7 +205,7 @@ PostgreSQL
 Kubernetes DNS provides service discovery for internal communication.
 
 ---
-## 📋 Networking Benefits
+## Networking Benefits
 
 The networking architecture provides:
 
@@ -218,7 +220,7 @@ The networking architecture provides:
 * Modern Kubernetes networking
 
 ---
-## ⚠️ Challenges Encountered
+## Challenges Encountered
 
 During implementation several networking challenges were addressed:
 
@@ -234,7 +236,7 @@ During implementation several networking challenges were addressed:
 These challenges were resolved through Kubernetes diagnostics, Gateway controller logs, cert-manager events, and Cloudflare DNS verification.
 
 ---
-## 🎓 Key Learnings
+## Key Learnings
 
 This implementation provided practical experience with:
 
@@ -250,7 +252,7 @@ This implementation provided practical experience with:
 * Production-inspired networking design
 
 ---
-## 📝 Summary
+## Summary
 
 The platform implements a modern Kubernetes networking architecture using **Gateway API**, **NGINX Gateway Fabric**, **Cloudflare DNS**, and **cert-manager**. External traffic is securely routed through declarative Gateway resources with automated TLS management and seamless integration with Argo Rollouts for progressive application delivery.
 
