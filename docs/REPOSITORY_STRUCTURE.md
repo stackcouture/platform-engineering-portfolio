@@ -9,8 +9,8 @@ The platform integrates infrastructure provisioning, GitOps-based continuous del
 ---
 ## High-Level Architecture
 
-<p align="center">
-  <img src="images/arch.png" width="550" alt="Project Overview">
+<p align="left">
+  <img src="images/arch-2.png" width="550" alt="Project Overview">
 </p>
 
 ---
