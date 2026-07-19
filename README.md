@@ -270,9 +270,6 @@ Click the screenshot to view the complete CI/CD workflow.
 ---
 ### Argo Rollouts Strategy
 <b>Blue-Green Deployment</b>
-<!-- <p align="left">
-  <img src="assets/screenshots/blue-green-deployment.gif" width="650" alt="Blue-Green Deployment">
-</p> -->
 
 <p align="left">
   <a href="assets/screenshots/blue-green-deployment.gif">
@@ -282,7 +279,7 @@ Click the screenshot to view the complete CI/CD workflow.
   </a>
 </p>
 
-<p align="center">
+<p align="left">
 Click the screenshot to view the complete Blue-Green Deployment.
 </p>
 
@@ -296,7 +293,7 @@ Click the screenshot to view the complete Blue-Green Deployment.
   </a>
 </p>
 
-<p align="center">
+<p align="left">
 Click the screenshot to view the complete Canary Deployment.
 </p>
 
