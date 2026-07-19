@@ -1,4 +1,3 @@
-## Overview
 
 **Cloud Native GKE** is a production-inspired cloud-native platform built on **Google Kubernetes Engine (GKE)** using modern **Platform Engineering**, **GitOps**, and **Infrastructure as Code (IaC)** practices.
 
@@ -12,6 +11,44 @@ The platform integrates infrastructure provisioning, GitOps-based continuous del
 <p align="left">
   <img src="images/arch-2.png" width="750" alt="Project Overview">
 </p>
+
+---
+## Table of Contents
+
+* [High-Level Architecture](#high-level-architecture)
+* [Key Capabilities](#key-capabilities)
+* [Repository Organization](#repository-organization)
+* [Repository Structure](#repository-structure)
+* [Repository Responsibilities](#repository-responsibilities)
+
+  * [gke-infrastructure](#gke-infrastructure)
+  * [gke-gitops](#gke-gitops)
+  * [voting-app](#voting-app)
+  * [cluster-operations](#cluster-operations)
+  * [Responsibility Boundaries](#responsibility-boundaries)
+* [Repository Relationships](#repository-relationships)
+
+  * [Repository Interaction Flow](#repository-interaction-flow)
+  * [End-to-End Delivery Workflow](#end-to-end-delivery-workflow)
+* [Layer Responsibilities](#layer-responsibilities)
+
+  * [Infrastructure Layer](#infrastructure-layer)
+  * [Platform Layer](#platform-layer)
+  * [Application Layer](#application-layer)
+  * [Layered Architecture Benefits](#layered-architecture-benefits)
+* [Design Principles](#design-principles)
+
+  * [Separation of Concerns](#separation-of-concerns)
+  * [Infrastructure as Code](#infrastructure-as-code)
+  * [GitOps as the Source of Truth](#gitops-as-the-source-of-truth)
+  * [Modular Architecture](#modular-architecture)
+  * [Environment Isolation](#environment-isolation)
+  * [Security by Default](#security-by-default)
+  * [Platform Standardization](#platform-standardization)
+  * [Automation First](#automation-first)
+  * [Observability by Design](#observability-by-design)
+  * [Scalability and Maintainability](#scalability-and-maintainability)
+  * [Summary](#summary)
 
 ---
 ### Key Capabilities
