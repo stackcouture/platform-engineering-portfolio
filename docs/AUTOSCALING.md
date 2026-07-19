@@ -26,7 +26,6 @@ The Cloud Native GKE project was designed to:
 * Improve application availability
 * Scale background worker services based on real workload demand
 
-
 ---
 ## 📑 Table of Contents
 
