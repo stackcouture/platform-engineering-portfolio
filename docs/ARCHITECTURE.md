@@ -1,20 +1,28 @@
-## 🏗️ Platform Architecture
+## 🏗️ Cloud-Native Architecture
 
 ### Overview
 
-This document describes the architecture of the **Platform Engineering Portfolio**, a production-inspired Kubernetes platform built on **Google Kubernetes Engine (GKE)**. The platform demonstrates modern cloud-native practices for infrastructure provisioning, application delivery, security, observability, and operations.
+This document describes the architecture of **Cloud Native GKE**, a production-inspired Platform Engineering project built on **Google Kubernetes Engine (GKE)**. It provides an end-to-end reference architecture that demonstrates how modern Kubernetes platforms can be designed, provisioned, secured, and operated using cloud-native technologies and GitOps practices.
 
-The design emphasizes:
+The platform is composed of modular infrastructure, Kubernetes platform services, GitOps-based application delivery, security controls, observability, autoscaling, networking, and operational automation. All infrastructure and Kubernetes resources are managed declaratively to provide a consistent, repeatable, and auditable deployment workflow aligned with modern Platform Engineering principles. :contentReference[oaicite:0]{index=0}
 
-- Infrastructure as Code (IaC)
-- GitOps-based Continuous Delivery
-- Policy-driven security
-- Progressive application delivery
-- Centralized observability
-- Workload isolation
-- Cloud-native scalability
+### Architecture Goals
 
-The objective is to provide a repeatable, secure, and maintainable platform suitable for deploying multiple applications in a Kubernetes environment.
+The platform is designed around the following principles:
+
+- **Infrastructure as Code** using Terraform
+- **GitOps Continuous Delivery** with Argo CD and Kustomize
+- **Private Google Kubernetes Engine (GKE)** clusters
+- **Policy-driven Kubernetes security**
+- **Production-inspired networking and traffic management**
+- **Progressive application delivery**
+- **Centralized observability and monitoring**
+- **Workload isolation through dedicated node pools**
+- **Event-driven and horizontal autoscaling**
+- **Operational automation using Kubernetes CronJobs**
+- **Cloud-native scalability, resilience, and maintainability**
+
+The objective of this architecture is not only to deploy applications, but to demonstrate how a production-inspired Kubernetes platform can be designed using industry best practices across infrastructure, security, delivery, observability, and day-2 operations. :contentReference[oaicite:1]{index=1}
 
 ---
 ## 📑 Table of Contents
@@ -100,8 +108,9 @@ Each layer has a well-defined responsibility and communicates with adjacent laye
 ---
 ## High-Level Architecture
 
-![High Level](images/platform_3.png "High Level")
-
+<p align="left">
+  <img src="images/platform_3.png" width="450" alt="High Level">
+</p>
 
 ---
 ## Platform Components
@@ -163,8 +172,8 @@ PostgreSQL
 
 Application delivery follows a GitOps workflow.
 
-<p align="center">
-  <img src="images/deployment.png" width="350" alt="Deployment">
+<p align="left">
+  <img src="images/deployment.png" width="450" alt="Deployment">
 </p>
 
 The Git repository is treated as the single source of truth for Kubernetes resources.
@@ -174,8 +183,8 @@ The Git repository is treated as the single source of truth for Kubernetes resou
 
 External requests follow the path below.
 
-<p align="center">
-  <img src="images/traffic_flow.png" width="350" alt="Traffic Flow">
+<p align="left">
+  <img src="images/traffic_flow.png" width="450" alt="Traffic Flow">
 </p>
 
 
@@ -197,8 +206,8 @@ Failed health checks pause or roll back the deployment before affecting all user
 
 The platform follows a layered security model.
 
-<p align="center">
-  <img src="images/manager_flow.png" width="350" alt="Security Architecture">
+<p align="left">
+  <img src="images/manager_flow.png" width="450" alt="Security Architecture">
 </p>
 
 Security controls include:
@@ -236,8 +245,8 @@ This approach eliminates hardcoded credentials from the repository.
 
 Monitoring is centralized using Prometheus and Grafana.
 
-<p align="center">
-  <img src="images/monitor2.png" width="350" alt="Monitoring Flow">
+<p align="left">
+  <img src="images/monitor2.png" width="450" alt="Monitoring Flow">
 </p>
 
 
@@ -325,7 +334,7 @@ Potential improvements include:
 ---
 ## Summary
 
-This platform demonstrates a modern Platform Engineering architecture that combines Infrastructure as Code, GitOps, Kubernetes, policy-based security, and observability into a cohesive deployment model.
+This demonstrates a modern Cloud-Native Engineering architecture that combines Infrastructure as Code, GitOps, Kubernetes, policy-based security, and observability into a cohesive deployment model.
 
 The architecture prioritizes automation, reliability, scalability, and operational consistency while following cloud-native best practices suitable for enterprise Kubernetes environments.
 
