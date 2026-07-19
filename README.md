@@ -279,6 +279,9 @@ Click the screenshot to view the complete CI/CD workflow.
   </a>
 </p>
 
+> [!TIP]
+> **🎬 Click the screenshot below to watch the complete Blue-Green Deployment demonstration.**
+
 <p align="left">
 Click the screenshot to view the complete Blue-Green Deployment.
 </p>
