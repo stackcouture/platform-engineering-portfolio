@@ -1,14 +1,14 @@
 ### Cloud-Native Kubernetes Environment on Google Kubernetes Engine (GKE)
 
-A production-inspired cloud-native Kubernetes environment built on **Google Kubernetes Engine (GKE)** that demonstrates modern Platform Engineering, GitOps, DevSecOps, and Kubernetes operational practices.
+A production-inspired cloud-native Kubernetes environment built on **Google Kubernetes Engine (GKE)** that demonstrates modern cloud-native engineering, GitOps, DevSecOps, and Kubernetes operational practices.
 
-The project goes beyond deploying an application by showcasing how infrastructure, automation, security, observability, and Kubernetes operations work together to build a production-ready environment.
+The project goes beyond deploying an application by demonstrating how infrastructure provisioning, deployment automation, security, observability, and Kubernetes operations come together in a production-inspired cloud-native environment.
 
 ## Overview
 
 This repository contains a production-inspired Kubernetes environment built on **Google Kubernetes Engine (GKE)**. It demonstrates how modern cloud-native technologies can be integrated to provision infrastructure, automate application delivery, secure workloads, monitor cluster health, and operate Kubernetes applications using industry-standard practices.
 
-The platform uses a **polyglot voting application** as the workload. The application consists of multiple microservices running on Kubernetes and serves as a realistic example for implementing deployment automation, security, observability, and day-to-day cluster operations.
+The environment uses a **polyglot voting application** as the workload. The application consists of multiple microservices running on Kubernetes and serves as a realistic example for implementing deployment automation, security, observability, and day-to-day cluster operations.
 
 ## Key Capabilities
 
@@ -50,18 +50,17 @@ The primary objective of this repository is to demonstrate practical experience 
 - [Repository Structure](#repository-structure)
   - [Repository Responsibilities](#repository-responsibilities)
 - [Documentation](#documentation)
-- [Platform Capabilities](#platform-capabilities)
-- [Platform Features](#platform-features)
+- [Key Capabilities](#key-capabilities)
+- [Technical Features](#technical-features)
 - [Demo Screenshots](#demo-screenshots)
-  - [Platform Architecture](#platform-architecture)
+  - [Architecture](#architecture)
   - [CI/CD Demo](#cicd-demo)
   - [GitOps with Argo CD](#gitops-with-argo-cd)
   - [Argo Rollouts Strategy](#argo-rollouts-strategy)
   - [Observability](#observability)
 - [Project at a Glance](#project-at-a-glance)
-  - [Platform Overview](#platform-overview)
+  - [Project Overview](#platform-overview)
   - [Portfolio Metrics](#portfolio-metrics)
-  - [Platform Features](#platform-features-1)
   - [Engineering Focus](#engineering-focus)
 - [Learning Outcomes](#learning-outcomes)
 - [Troubleshooting Experience](#troubleshooting-experience)
@@ -77,7 +76,7 @@ The primary objective of this repository is to demonstrate practical experience 
 ---
 ## Architecture
 
-The following architecture illustrates the complete platform deployment on GCP.
+The following architecture illustrates the complete deployment on GCP.
 ![Architecture Diagram](docs/images/cloud-native.png "Cloud-Native Architecture")
 
 ---
@@ -184,7 +183,7 @@ Explore the platform through the following documentation.
 
 
 ---
-## Platform Capabilities
+## Key Capabilities
 
 | Area | Technologies |
 |------|--------------|
@@ -200,10 +199,9 @@ Explore the platform through the following documentation.
 | Autoscaling | Horizontal Pod Autoscaler (HPA), KEDA, Cluster Autoscaler |
 | Data Platform | PostgreSQL, Redis |
 | Cost Optimization | Kubecost |
-| Platform Automation | Python Automation, Kubernetes CronJobs |
 
 ---
-## Platform Features
+## Technical Features
 
 | Feature | Description |
 |---------|-------------|
@@ -230,7 +228,7 @@ Explore the platform through the following documentation.
 ---
 ## Demo Screenshots
 
-### Platform Architecture
+### Architecture
 
 <p align="left">
   <img src="assets/screenshots/architecture.png" width="550" alt="Architecture">
@@ -290,12 +288,12 @@ Explore the platform through the following documentation.
 ---
 ## Project at a Glance
 
-### Platform Overview
+### Project Overview
 
 | Category                        | Details                                 |
 | ------------------------------- | --------------------------------------- |
-| **Cloud Platform**              | Google Cloud Platform (GCP)             |
-| **Container Platform**          | Google Kubernetes Engine (GKE)          |
+| **Cloud**                       | Google Cloud Platform (GCP)             |
+| **Container**                   | Google Kubernetes Engine (GKE)          |
 | **Infrastructure**              | Terraform                               |
 | **Continuous Delivery**         | GitOps with Argo CD                     |
 | **Continuous Integration**      | GitHub Actions                          |
@@ -324,7 +322,7 @@ Explore the platform through the following documentation.
 
 ---
 
-### Platform Features
+### Engineering Focus
 
 | Area                   | Technologies                        |
 | ---------------------- | ----------------------------------- |
@@ -340,21 +338,6 @@ Explore the platform through the following documentation.
 | Cost Monitoring        | ✅ Kubecost                          |
 | Backup & Recovery      | ✅ Velero                            |
 | CI/CD                  | ✅ GitHub Actions                    |
-
----
-
-### Engineering Focus
-
-* ✅ Production-inspired Platform Engineering
-* ✅ Modular multi-repository architecture
-* ✅ Infrastructure as Code (Terraform)
-* ✅ GitOps-driven Kubernetes deployments
-* ✅ Kubernetes security and policy enforcement
-* ✅ Progressive application delivery
-* ✅ Automated CI/CD pipelines
-* ✅ Platform observability and alerting
-* ✅ Day-2 platform automation
-
 
 ---
 ## Learning Outcomes
