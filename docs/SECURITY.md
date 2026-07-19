@@ -225,7 +225,7 @@ Together, Kyverno and Falco provide both preventive and detective security contr
 
 Falco Architecture
 
-<p align="left"> <img src="images/falco-architecture.jpg" width="350" alt="Falco Runtime Security"> </p>
+<p align="left"> <img src="images/falco-architecture.jpg" width="650" alt="Falco Runtime Security"> </p>
 
 Falco continuously monitors runtime activity across the Kubernetes cluster and evaluates events against predefined security rules. When suspicious behavior is detected, Falco generates alerts that can be integrated with the platform's monitoring and notification systems.
 
